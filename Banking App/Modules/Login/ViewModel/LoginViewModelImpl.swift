@@ -63,14 +63,17 @@ extension LoginViewModelImpl {
 // MARK: - Storage
 extension LoginViewModelImpl {
    func checkIssetInTable(email: String, password: String) {
-      guard let user = savedAccounts.first(where: { $0.email == email }) else {
+      if let user = savedAccounts.first(where: { $0.email == email }) {
+         
+         guard user.password != password else {
+            self.showMessage = "Passwords not match!"
+            return
+         }
+         
+         self.successLogin = true
+         
+      } else {
          self.showMessage = "User not found"
       }
-      
-      if user.password != password {
-         self.showMessage = "Passwords not match!"
-      }
-      
-      self.successLogin = true
    }
 }

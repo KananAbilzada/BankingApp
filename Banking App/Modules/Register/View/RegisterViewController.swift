@@ -1,22 +1,40 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  Banking App
 //
-//  Created by Kanan Abilzada on 17.12.23.
+//  Created by Kanan Abilzada on 18.12.23.
 //
 
 import UIKit
 import Combine
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
    // MARK: - Properties
-   var coordinator: LoginCoordinator?
+   var coordinator: RegisterCoordinator?
    private var cancellabes: Set<AnyCancellable> = .init()
    private var viewModel = LoginViewModelImpl()
    
    // MARK: - Views
+   private lazy var usernameField: CustomTextFieldView = .init()
    private lazy var emailField: CustomTextFieldView = .init()
    private lazy var passwordField: CustomTextFieldView = .init()
+   private lazy var birthdayField: CustomTextFieldView = .init()
+   
+   private lazy var scrollView: UIScrollView = {
+      let scrollView = UIScrollView()
+      
+      scrollView.translatesAutoresizingMaskIntoConstraints = false
+      return scrollView
+   }()
+   
+   private lazy var scrollViewContainer: UIStackView = {
+      let view = UIStackView()
+      view.axis = .vertical
+      view.spacing = 10
+      
+      view.translatesAutoresizingMaskIntoConstraints = false
+      return view
+   }()
    
    private lazy var fieldsStackView: UIStackView = {
       let stackView = UIStackView()
@@ -31,20 +49,10 @@ class LoginViewController: UIViewController {
    private lazy var headerImage: UIImageView = {
       let imageView = UIImageView()
       imageView.translatesAutoresizingMaskIntoConstraints = false
-      imageView.image = .init(named: ImageNames.loginBackground.rawValue)
+      imageView.image = .init(named: ImageNames.registerBackground.rawValue)
       imageView.contentMode = .scaleAspectFit
       
       return imageView
-   }()
-   
-   private lazy var notHaveAccountButton: UIButton = {
-      let button = UIButton()
-      button.setTitle("Not have Account? Register", for: .normal)
-      button.translatesAutoresizingMaskIntoConstraints = false
-      button.setTitleColor(.systemGray, for: .normal)
-      button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-
-      return button
    }()
    
    private lazy var loginButton: CustomButton = {
@@ -59,7 +67,7 @@ class LoginViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       // Do any additional setup after loading the view.
-      title = "Login"
+      title = "Registration"
       
       setupUI()
       subscribeToViewModel()
@@ -67,20 +75,38 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - Setup
-extension LoginViewController {
+extension RegisterViewController {
    private func setupUI() {
       view.backgroundColor = .white
       
-      self.view.addSubview(headerImage)
+      setupScrollView()
+      
+      scrollViewContainer.addArrangedSubview(headerImage)
       
       setupFields()
       setupButton()
       setConstraints()
    }
    
+   private func setupScrollView() {
+      view.addSubview(scrollView)
+      scrollView.addSubview(scrollViewContainer)
+
+      scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+      scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+      scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+      scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
+      scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+      scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+      scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+      scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+      // this is important for scrolling
+      scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+   }
+   
    private func setupButton() {
-      self.view.addSubview(loginButton)
-      self.view.addSubview(notHaveAccountButton)
+      scrollViewContainer.addArrangedSubview(loginButton)
       
       self.loginButton.addAction(UIAction(handler: { action in
          /// validate fields and continue
@@ -89,13 +115,13 @@ extension LoginViewController {
             password: self.passwordField.textField.text!
          )
       }), for: .touchUpInside)
-      
-      self.notHaveAccountButton.addAction(UIAction(handler: { action in
-         self.coordinator?.showRegisterPage()
-      }), for: .touchUpInside)
    }
    
    private func setupFields() {
+      usernameField.titleLabel.text = "Username"
+      usernameField.leftImage = .init(named: ImageNames.profile.rawValue)
+      usernameField.textField.placeholder = "Kanan"
+      
       emailField.titleLabel.text = "Email"
       emailField.textField.keyboardType = .emailAddress
       emailField.leftImage = .init(named: ImageNames.email.rawValue)
@@ -107,42 +133,44 @@ extension LoginViewController {
       passwordField.leftImage = .init(named: ImageNames.password.rawValue)
       passwordField.textField.placeholder = "******"
       
+      birthdayField.titleLabel.text = "Birthday"
+      birthdayField.leftImage = .init(named: ImageNames.birthday.rawValue)
+      birthdayField.textField.placeholder = "12.08.2012"
+      
+      fieldsStackView.addArrangedSubview(usernameField)
       fieldsStackView.addArrangedSubview(emailField)
       fieldsStackView.addArrangedSubview(passwordField)
+      fieldsStackView.addArrangedSubview(birthdayField)
       
-      self.view.addSubview(fieldsStackView)
+      scrollViewContainer.addArrangedSubview(fieldsStackView)
    }
    
    private func setConstraints() {
       let height = UIScreen.main.bounds.height
       
       NSLayoutConstraint.activate([
-         headerImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+         headerImage.centerXAnchor.constraint(equalTo: scrollViewContainer.centerXAnchor),
          headerImage.widthAnchor.constraint(equalToConstant: 300),
          headerImage.heightAnchor.constraint(equalToConstant: 200),
-         headerImage.topAnchor.constraint(equalTo: view.topAnchor, constant: height / 8),
+         headerImage.topAnchor.constraint(equalTo: scrollViewContainer.topAnchor, constant: height / 30),
          
-         fieldsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+         fieldsStackView.centerXAnchor.constraint(equalTo: scrollViewContainer.centerXAnchor),
          fieldsStackView.topAnchor.constraint(equalTo: headerImage.bottomAnchor),
-         fieldsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-         fieldsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+         fieldsStackView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 20),
+         fieldsStackView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -20),
          
-         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+         loginButton.centerXAnchor.constraint(equalTo: scrollViewContainer.centerXAnchor),
          loginButton.topAnchor.constraint(equalTo: fieldsStackView.bottomAnchor, constant: 30),
-         loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+         loginButton.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 20),
          loginButton.heightAnchor.constraint(equalToConstant: 60),
-         loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-         
-         
-         notHaveAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-         notHaveAccountButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 15),
+         loginButton.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -20),
       ])
       
    }
 }
 
 // MARK: - Observe ViewModel
-extension LoginViewController {
+extension RegisterViewController {
    private func subscribeToViewModel() {
       /// validation of submit button clicked to continue
       viewModel.$errors

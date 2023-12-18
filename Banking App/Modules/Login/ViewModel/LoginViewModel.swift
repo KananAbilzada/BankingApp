@@ -9,7 +9,6 @@ import Foundation
 
 protocol LoginViewModel: AnyObject {
    var validator: Validator { get set }
-   var errors: [Fields: String] { get set }
    
    var successLogin: Bool { get set }
    

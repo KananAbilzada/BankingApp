@@ -27,6 +27,9 @@
 		E53C62872B3061FE00048956 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62862B3061FE00048956 /* CustomButton.swift */; };
 		E53C628A2B306F6B00048956 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62892B306F6B00048956 /* Validator.swift */; };
 		E53C628D2B3074D500048956 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C628C2B3074D500048956 /* AccountModel.swift */; };
+		E53C628F2B307A4D00048956 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C628E2B307A4D00048956 /* UIViewController+alert.swift */; };
+		E53C62932B307E6600048956 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62922B307E6600048956 /* RegisterViewController.swift */; };
+		E53C62962B307E8D00048956 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62952B307E8D00048956 /* RegisterCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		E53C62862B3061FE00048956 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		E53C62892B306F6B00048956 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		E53C628C2B3074D500048956 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		E53C628E2B307A4D00048956 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		E53C62922B307E6600048956 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E53C62952B307E8D00048956 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +166,8 @@
 		E53C62682B2F5B6800048956 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E53C628B2B3074D100048956 /* Model */,
 				E53C62772B2F5E6C00048956 /* Coordinator */,
+				E53C628B2B3074D100048956 /* Model */,
 				E53C62692B2F5B7300048956 /* View */,
 				E53C626B2B2F5B8200048956 /* ViewModel */,
 			);
@@ -197,6 +203,7 @@
 		E53C62712B2F5C5F00048956 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E53C62902B307E5300048956 /* Register */,
 				E53C62682B2F5B6800048956 /* Login */,
 			);
 			path = Modules;
@@ -252,6 +259,7 @@
 			children = (
 				E53C62822B3040A900048956 /* UIView+.swift */,
 				E53C62842B3040B600048956 /* UIColor+.swift */,
+				E53C628E2B307A4D00048956 /* UIViewController+alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +278,31 @@
 				E53C628C2B3074D500048956 /* AccountModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E53C62902B307E5300048956 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62942B307E8300048956 /* Coordinator */,
+				E53C62912B307E5900048956 /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		E53C62912B307E5900048956 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62922B307E6600048956 /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E53C62942B307E8300048956 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62952B307E8D00048956 /* RegisterCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,11 +442,14 @@
 				E53C628A2B306F6B00048956 /* Validator.swift in Sources */,
 				E53C623C2B2F5B2200048956 /* LoginViewController.swift in Sources */,
 				E53C62802B302BF300048956 /* ImageNames.swift in Sources */,
+				E53C628F2B307A4D00048956 /* UIViewController+alert.swift in Sources */,
 				E53C62852B3040B600048956 /* UIColor+.swift in Sources */,
 				E53C62382B2F5B2200048956 /* AppDelegate.swift in Sources */,
 				E53C623A2B2F5B2200048956 /* SceneDelegate.swift in Sources */,
+				E53C62962B307E8D00048956 /* RegisterCoordinator.swift in Sources */,
 				E53C628D2B3074D500048956 /* AccountModel.swift in Sources */,
 				E53C62792B2F5E7800048956 /* LoginCoordinator.swift in Sources */,
+				E53C62932B307E6600048956 /* RegisterViewController.swift in Sources */,
 				E53C62832B3040A900048956 /* UIView+.swift in Sources */,
 				E53C62762B2F5DD700048956 /* Coordinator.swift in Sources */,
 				E53C627D2B301DB800048956 /* CustomTextField.swift in Sources */,

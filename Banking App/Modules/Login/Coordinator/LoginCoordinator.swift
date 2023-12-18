@@ -24,6 +24,11 @@ class LoginCoordinator: Coordinator {
       print("showMainPage...")
    }
    
+   func showRegisterPage() {
+      let registerCoordinator = RegisterCoordinator(navigationController: navigationController)
+      registerCoordinator.start()
+   }
+   
    
    //    func showSecondController(with title: String) {
    //        let secondCoordinator = SecondCoordinator(navigationController: navigationController, title: title)

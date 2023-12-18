@@ -3,4 +3,54 @@
    uuid = "9539489E-E1C8-4BF3-B18F-6B195A68CADD"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E57869D8-FD8C-4548-83F9-3FA8610DB41C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Banking App/Modules/Login/View/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "subscribeToViewModel()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E57869D8-FD8C-4548-83F9-3FA8610DB41C - 453ae1d02532a7b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.String) -&gt; () in Banking_App.LoginViewController.subscribeToViewModel() -&gt; ()"
+                  moduleName = "Banking App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kanan_abilzada/Desktop/Banking%20App/Banking%20App/Modules/Login/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "E57869D8-FD8C-4548-83F9-3FA8610DB41C - 453ae1d02532a7b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.String) -&gt; () in Banking_App.LoginViewController.subscribeToViewModel() -&gt; ()"
+                  moduleName = "Banking App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kanan_abilzada/Desktop/Banking%20App/Banking%20App/Modules/Login/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

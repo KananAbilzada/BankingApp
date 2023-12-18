@@ -12,6 +12,9 @@ enum ImageNames: String {
    
    case profile = "profile"
    case password = "password"
+   case email = "email"
+   case birthday = "birthday"
    
-   case authBackground = "authBackground"
+   case loginBackground = "loginBackground"
+   case registerBackground = "registerBackground"
 }
