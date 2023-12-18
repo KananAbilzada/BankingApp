@@ -21,7 +21,8 @@ class RegisterCoordinator: Coordinator {
    }
    
    func showMainPage() {
-      print("showMainPage...")
+      let mainCoordinator = HomeCoordinator(navigationController: navigationController)
+      mainCoordinator.start()
    }
    
 }

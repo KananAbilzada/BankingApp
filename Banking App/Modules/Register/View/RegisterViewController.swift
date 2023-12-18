@@ -12,7 +12,7 @@ class RegisterViewController: UIViewController {
    // MARK: - Properties
    var coordinator: RegisterCoordinator?
    private var cancellabes: Set<AnyCancellable> = .init()
-   private var viewModel = LoginViewModelImpl()
+   private var viewModel = RegisterViewModelImpl()
    
    // MARK: - Views
    private lazy var usernameField: CustomTextFieldView = .init()
@@ -30,7 +30,7 @@ class RegisterViewController: UIViewController {
    private lazy var scrollViewContainer: UIStackView = {
       let view = UIStackView()
       view.axis = .vertical
-      view.spacing = 10
+      view.spacing = 20
       
       view.translatesAutoresizingMaskIntoConstraints = false
       return view
@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController {
       return imageView
    }()
    
-   private lazy var loginButton: CustomButton = {
+   private lazy var registerButton: CustomButton = {
       let button = CustomButton()
       button.setButtonTitle("Confirm")
       button.setButtonBackgroundColor(.systemBlue)
@@ -77,7 +77,7 @@ class RegisterViewController: UIViewController {
 // MARK: - Setup
 extension RegisterViewController {
    private func setupUI() {
-      view.backgroundColor = .white
+      view.backgroundColor = .secondarySystemBackground
       
       setupScrollView()
       
@@ -106,13 +106,15 @@ extension RegisterViewController {
    }
    
    private func setupButton() {
-      scrollViewContainer.addArrangedSubview(loginButton)
+      scrollViewContainer.addArrangedSubview(registerButton)
       
-      self.loginButton.addAction(UIAction(handler: { action in
+      self.registerButton.addAction(UIAction(handler: { action in
          /// validate fields and continue
          self.viewModel.checkFields(
+            username: self.usernameField.textField.text!, 
             email: self.emailField.textField.text!,
-            password: self.passwordField.textField.text!
+            password: self.passwordField.textField.text!,
+            birthday: self.birthdayField.textField.text!
          )
       }), for: .touchUpInside)
    }
@@ -159,11 +161,10 @@ extension RegisterViewController {
          fieldsStackView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 20),
          fieldsStackView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -20),
          
-         loginButton.centerXAnchor.constraint(equalTo: scrollViewContainer.centerXAnchor),
-         loginButton.topAnchor.constraint(equalTo: fieldsStackView.bottomAnchor, constant: 30),
-         loginButton.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 20),
-         loginButton.heightAnchor.constraint(equalToConstant: 60),
-         loginButton.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -20),
+         registerButton.centerXAnchor.constraint(equalTo: scrollViewContainer.centerXAnchor),
+         registerButton.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor, constant: 20),
+         registerButton.heightAnchor.constraint(equalToConstant: 60),
+         registerButton.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor, constant: -20),
       ])
       
    }
@@ -180,12 +181,20 @@ extension RegisterViewController {
             print("show errors \(errors)")
             
             errors.forEach { key, value in
+               if key == .username {
+                  self.usernameField.showError(message: value)
+               }
+               
                if key == .email {
                   self.emailField.showError(message: value)
                }
                
                if key == .password {
                   self.passwordField.showError(message: value)
+               }
+               
+               if key == .birthday {
+                  self.birthdayField.showError(message: value)
                }
             }
          }
@@ -202,7 +211,7 @@ extension RegisterViewController {
          .store(in: &cancellabes)
       
       /// handle success login case
-      viewModel.$successLogin
+      viewModel.$successRegister
          .dropFirst()
          .sink { [weak self] _ in
             guard let self else { return }

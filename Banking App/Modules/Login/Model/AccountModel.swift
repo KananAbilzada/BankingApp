@@ -8,8 +8,10 @@
 import Foundation
 
 struct AccountModel {
+   let username: String
    let email: String
    let password: String
+   let birthday: String
    let isActive: Bool
 }
 

@@ -30,6 +30,15 @@
 		E53C628F2B307A4D00048956 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C628E2B307A4D00048956 /* UIViewController+alert.swift */; };
 		E53C62932B307E6600048956 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62922B307E6600048956 /* RegisterViewController.swift */; };
 		E53C62962B307E8D00048956 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62952B307E8D00048956 /* RegisterCoordinator.swift */; };
+		E53C62992B30BE6600048956 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62982B30BE6600048956 /* RegisterViewModel.swift */; };
+		E53C629B2B30BE7100048956 /* RegisterViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C629A2B30BE7100048956 /* RegisterViewModelImpl.swift */; };
+		E53C629D2B30DCE000048956 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C629C2B30DCE000048956 /* UIApplication+.swift */; };
+		E53C62A12B30DD5800048956 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62A02B30DD5800048956 /* HomeViewController.swift */; };
+		E53C62A42B30DD8400048956 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62A32B30DD8400048956 /* HomeCoordinator.swift */; };
+		E53C62A72B30DE6D00048956 /* HomeViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62A62B30DE6D00048956 /* HomeViewModelImpl.swift */; };
+		E53C62AB2B30E0DA00048956 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62AA2B30E0DA00048956 /* AccountManager.swift */; };
+		E53C62AD2B30F92400048956 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62AC2B30F92400048956 /* CardView.swift */; };
+		E53C62AF2B31028700048956 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62AE2B31028700048956 /* ActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +86,15 @@
 		E53C628E2B307A4D00048956 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		E53C62922B307E6600048956 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E53C62952B307E8D00048956 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		E53C62982B30BE6600048956 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		E53C629A2B30BE7100048956 /* RegisterViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelImpl.swift; sourceTree = "<group>"; };
+		E53C629C2B30DCE000048956 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		E53C62A02B30DD5800048956 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E53C62A32B30DD8400048956 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		E53C62A62B30DE6D00048956 /* HomeViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelImpl.swift; sourceTree = "<group>"; };
+		E53C62AA2B30E0DA00048956 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		E53C62AC2B30F92400048956 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E53C62AE2B31028700048956 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +147,7 @@
 			children = (
 				E53C62712B2F5C5F00048956 /* Modules */,
 				E53C627A2B301D9400048956 /* Core */,
+				E53C62A82B30E0B300048956 /* FrameWorksAndDrivers */,
 				E53C62672B2F5B3100048956 /* Application */,
 				E53C62702B2F5C2B00048956 /* Resources */,
 			);
@@ -203,6 +222,7 @@
 		E53C62712B2F5C5F00048956 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E53C629E2B30DD4A00048956 /* Home */,
 				E53C62902B307E5300048956 /* Register */,
 				E53C62682B2F5B6800048956 /* Login */,
 			);
@@ -242,6 +262,8 @@
 			children = (
 				E53C627C2B301DB800048956 /* CustomTextField.swift */,
 				E53C62862B3061FE00048956 /* CustomButton.swift */,
+				E53C62AC2B30F92400048956 /* CardView.swift */,
+				E53C62AE2B31028700048956 /* ActionButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -260,6 +282,7 @@
 				E53C62822B3040A900048956 /* UIView+.swift */,
 				E53C62842B3040B600048956 /* UIColor+.swift */,
 				E53C628E2B307A4D00048956 /* UIViewController+alert.swift */,
+				E53C629C2B30DCE000048956 /* UIApplication+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				E53C62942B307E8300048956 /* Coordinator */,
+				E53C62972B30BE5200048956 /* ViewModel */,
 				E53C62912B307E5900048956 /* View */,
 			);
 			path = Register;
@@ -303,6 +327,65 @@
 				E53C62952B307E8D00048956 /* RegisterCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E53C62972B30BE5200048956 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62982B30BE6600048956 /* RegisterViewModel.swift */,
+				E53C629A2B30BE7100048956 /* RegisterViewModelImpl.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E53C629E2B30DD4A00048956 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62A52B30DE6500048956 /* ViewModel */,
+				E53C62A22B30DD7C00048956 /* Coordinator */,
+				E53C629F2B30DD4F00048956 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E53C629F2B30DD4F00048956 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62A02B30DD5800048956 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E53C62A22B30DD7C00048956 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62A32B30DD8400048956 /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E53C62A52B30DE6500048956 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62A62B30DE6D00048956 /* HomeViewModelImpl.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E53C62A82B30E0B300048956 /* FrameWorksAndDrivers */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62A92B30E0C800048956 /* Services */,
+			);
+			path = FrameWorksAndDrivers;
+			sourceTree = "<group>";
+		};
+		E53C62A92B30E0C800048956 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E53C62AA2B30E0DA00048956 /* AccountManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,14 +525,23 @@
 				E53C628A2B306F6B00048956 /* Validator.swift in Sources */,
 				E53C623C2B2F5B2200048956 /* LoginViewController.swift in Sources */,
 				E53C62802B302BF300048956 /* ImageNames.swift in Sources */,
+				E53C62A12B30DD5800048956 /* HomeViewController.swift in Sources */,
 				E53C628F2B307A4D00048956 /* UIViewController+alert.swift in Sources */,
+				E53C62992B30BE6600048956 /* RegisterViewModel.swift in Sources */,
+				E53C629B2B30BE7100048956 /* RegisterViewModelImpl.swift in Sources */,
 				E53C62852B3040B600048956 /* UIColor+.swift in Sources */,
 				E53C62382B2F5B2200048956 /* AppDelegate.swift in Sources */,
 				E53C623A2B2F5B2200048956 /* SceneDelegate.swift in Sources */,
+				E53C62AF2B31028700048956 /* ActionButton.swift in Sources */,
 				E53C62962B307E8D00048956 /* RegisterCoordinator.swift in Sources */,
+				E53C62AB2B30E0DA00048956 /* AccountManager.swift in Sources */,
 				E53C628D2B3074D500048956 /* AccountModel.swift in Sources */,
+				E53C62A42B30DD8400048956 /* HomeCoordinator.swift in Sources */,
+				E53C629D2B30DCE000048956 /* UIApplication+.swift in Sources */,
 				E53C62792B2F5E7800048956 /* LoginCoordinator.swift in Sources */,
+				E53C62A72B30DE6D00048956 /* HomeViewModelImpl.swift in Sources */,
 				E53C62932B307E6600048956 /* RegisterViewController.swift in Sources */,
+				E53C62AD2B30F92400048956 /* CardView.swift in Sources */,
 				E53C62832B3040A900048956 /* UIView+.swift in Sources */,
 				E53C62762B2F5DD700048956 /* Coordinator.swift in Sources */,
 				E53C627D2B301DB800048956 /* CustomTextField.swift in Sources */,

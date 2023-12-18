@@ -17,4 +17,10 @@ enum ImageNames: String {
    
    case loginBackground = "loginBackground"
    case registerBackground = "registerBackground"
+   
+   // MARK: - Cards
+   case wifi = "wifi"
+   case rubbishBin = "rubbishBin"
+   case add = "add"
+   case transfer = "transfer"
 }
