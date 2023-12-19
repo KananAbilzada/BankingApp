@@ -21,12 +21,21 @@ class LoginCoordinator: Coordinator {
    }
    
    func showMainPage() {
-      print("showMainPage...")
+      let coordinator = HomeCoordinator(navigationController: navigationController)
+      coordinator.start()
    }
    
    func showRegisterPage() {
       let registerCoordinator = RegisterCoordinator(navigationController: navigationController)
       registerCoordinator.start()
+   }
+   
+   func changeRootToLogin() {
+      let viewController = LoginViewController()
+      viewController.coordinator = self
+      navigationController = UINavigationController(rootViewController: viewController)
+      
+      UIApplication.setRootViewController(navigationController)
    }
    
    

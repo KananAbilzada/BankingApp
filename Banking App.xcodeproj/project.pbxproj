@@ -39,6 +39,8 @@
 		E53C62AB2B30E0DA00048956 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62AA2B30E0DA00048956 /* AccountManager.swift */; };
 		E53C62AD2B30F92400048956 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62AC2B30F92400048956 /* CardView.swift */; };
 		E53C62AF2B31028700048956 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62AE2B31028700048956 /* ActionButton.swift */; };
+		E53C62B32B3171F600048956 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62B22B3171F600048956 /* UserDefaults+.swift */; };
+		E53C62B52B31722700048956 /* JsonSerializationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62B42B31722700048956 /* JsonSerializationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		E53C62AA2B30E0DA00048956 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		E53C62AC2B30F92400048956 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E53C62AE2B31028700048956 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		E53C62B22B3171F600048956 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
+		E53C62B42B31722700048956 /* JsonSerializationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSerializationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +287,7 @@
 				E53C62842B3040B600048956 /* UIColor+.swift */,
 				E53C628E2B307A4D00048956 /* UIViewController+alert.swift */,
 				E53C629C2B30DCE000048956 /* UIApplication+.swift */,
+				E53C62B22B3171F600048956 /* UserDefaults+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				E53C62892B306F6B00048956 /* Validator.swift */,
+				E53C62B42B31722700048956 /* JsonSerializationHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -534,7 +540,9 @@
 				E53C623A2B2F5B2200048956 /* SceneDelegate.swift in Sources */,
 				E53C62AF2B31028700048956 /* ActionButton.swift in Sources */,
 				E53C62962B307E8D00048956 /* RegisterCoordinator.swift in Sources */,
+				E53C62B32B3171F600048956 /* UserDefaults+.swift in Sources */,
 				E53C62AB2B30E0DA00048956 /* AccountManager.swift in Sources */,
+				E53C62B52B31722700048956 /* JsonSerializationHelper.swift in Sources */,
 				E53C628D2B3074D500048956 /* AccountModel.swift in Sources */,
 				E53C62A42B30DD8400048956 /* HomeCoordinator.swift in Sources */,
 				E53C629D2B30DCE000048956 /* UIApplication+.swift in Sources */,

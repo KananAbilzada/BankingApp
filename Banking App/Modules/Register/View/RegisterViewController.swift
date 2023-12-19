@@ -77,7 +77,7 @@ class RegisterViewController: UIViewController {
 // MARK: - Setup
 extension RegisterViewController {
    private func setupUI() {
-      view.backgroundColor = .secondarySystemBackground
+      view.backgroundColor = .white
       
       setupScrollView()
       

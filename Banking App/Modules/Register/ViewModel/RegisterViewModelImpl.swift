@@ -64,6 +64,8 @@ extension RegisterViewModelImpl {
                password: password,
                birthday: birthday
             )
+         } else {
+            errors[.email] = "This email has been registered!"
          }
       }
    }
@@ -72,7 +74,7 @@ extension RegisterViewModelImpl {
 // MARK: - Storage
 extension RegisterViewModelImpl {
    func checkIssetInTable(email: String) -> Bool {
-      return savedAccounts.first(where: { $0.email == email }) != nil
+      return accountManager.issetUser(with: email)
    }
    
    /// save in temporary table
@@ -80,8 +82,8 @@ extension RegisterViewModelImpl {
       name: String, email: String,
       password: String, birthday: String
    ) {
-      savedAccounts.append(
-         .init(
+      accountManager.saveUser(
+         new: .init(
             username: name,
             email: email,
             password: password,

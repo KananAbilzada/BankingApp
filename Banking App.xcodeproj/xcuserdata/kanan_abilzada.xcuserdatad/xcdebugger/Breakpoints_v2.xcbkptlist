@@ -20,7 +20,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E57869D8-FD8C-4548-83F9-3FA8610DB41C - 453ae1d02532a7b7"
+                  uuid = "E57869D8-FD8C-4548-83F9-3FA8610DB41C - 453ae1d02532a794"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,8 +30,8 @@
                   urlString = "file:///Users/kanan_abilzada/Desktop/Banking%20App/Banking%20App/Modules/Login/View/LoginViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "170"
-                  endingLineNumber = "170"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
                   offsetFromSymbolStart = "232">
                </Location>
                <Location
@@ -50,38 +50,6 @@
                   offsetFromSymbolStart = "184">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "043BD763-4806-4824-AFFA-7584D826765F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Banking App/Modules/Login/Coordinator/LoginCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "showMainPage()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FE2DCC44-5288-42BB-97C5-26A8F6CAA810"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Banking App/Modules/Register/ViewModel/RegisterViewModelImpl.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "checkFields(username:email:password:birthday:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

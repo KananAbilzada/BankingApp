@@ -8,12 +8,6 @@
 import Foundation
 import Combine
 
-// MARK: - Temp Storage
-var savedAccounts: [AccountModel] = .init()
-/// created for just temp storage
-
-
-
 class LoginViewModelImpl: LoginViewModel, ObservableObject {
    // MARK: - Properties
    @Published var successLogin: Bool = false
@@ -27,9 +21,17 @@ class LoginViewModelImpl: LoginViewModel, ObservableObject {
    }
    
    var validator: Validator
+   var jsonHelper: JSONHelperProtocol
+   var accountManager: AccountManager
    
-   init(validator: Validator = ValidatorImpl()) {
+   init(
+      validator: Validator = ValidatorImpl(),
+      jsonHelper: JSONHelperProtocol = JSONHelper(),
+      accountManager: AccountManager = AccountManagerImpl()
+   ) {
       self.validator = validator
+      self.jsonHelper = jsonHelper
+      self.accountManager = accountManager
    }
 }
 
@@ -63,16 +65,15 @@ extension LoginViewModelImpl {
 // MARK: - Storage
 extension LoginViewModelImpl {
    func checkIssetInTable(email: String, password: String) {
-      if let user = savedAccounts.first(where: { $0.email == email }) {
-         
-         guard user.password != password else {
+      if let user = accountManager.getUser(with: email) {
+         guard user.password == password else {
             self.showMessage = "Passwords not match!"
             return
          }
          
+         accountManager.saveLogin()
          self.successLogin = true
-         
-      } else {
+      }  else {
          self.showMessage = "User not found"
       }
    }

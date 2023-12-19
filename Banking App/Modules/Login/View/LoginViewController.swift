@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
 // MARK: - Setup
 extension LoginViewController {
    private func setupUI() {
-      view.backgroundColor = .secondarySystemBackground
+      view.backgroundColor = .white
       
       self.view.addSubview(headerImage)
       

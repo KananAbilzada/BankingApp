@@ -80,7 +80,7 @@ class ActionButton: UIButton {
          backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
          backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
          backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
-         backgroundView.widthAnchor.constraint(equalToConstant: 60),
+         backgroundView.widthAnchor.constraint(equalToConstant: 70),
          backgroundView.heightAnchor.constraint(equalToConstant: 70),
         
          iconView.widthAnchor.constraint(equalToConstant: 20),

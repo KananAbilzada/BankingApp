@@ -24,4 +24,9 @@ class HomeCoordinator: Coordinator {
       UIApplication.setRootViewController(navigationController)
    }
    
+   func showLogin() {
+      let loginViewController = LoginCoordinator(navigationController: navigationController)
+      loginViewController.changeRootToLogin()
+   }
+   
 }

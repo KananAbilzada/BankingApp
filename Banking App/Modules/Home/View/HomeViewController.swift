@@ -58,6 +58,16 @@ class HomeViewController: UIViewController {
       return view
    }()
    
+   private lazy var logoutButton: UIButton = {
+      let button = UIButton()
+      button.setTitle("Logout", for: .normal)
+      button.translatesAutoresizingMaskIntoConstraints = false
+      button.setTitleColor(.red, for: .normal)
+      button.titleLabel?.font = .boldSystemFont(ofSize: 15)
+
+      return button
+   }()
+   
    // MARK: - Main methods
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -75,6 +85,11 @@ extension HomeViewController {
       view.backgroundColor = .secondarySystemBackground
       
       setupCard()
+      self.view.addSubview(logoutButton)
+      self.logoutButton.addAction(UIAction(handler: { action in
+         /// validate fields and continue
+         self.viewModel.logout()
+      }), for: .touchUpInside)
      
       setConstraints()
    }
@@ -99,6 +114,9 @@ extension HomeViewController {
          actionsStackView.topAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 30),
          actionsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
          actionsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
+         
+         logoutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+         logoutButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
       ])
    }
 }
@@ -106,6 +124,12 @@ extension HomeViewController {
 // MARK: - Observe ViewModel
 extension HomeViewController {
    private func subscribeToViewModel() {
-      
+      viewModel.$showLogin
+         .sink { [weak self] value in
+            if value {
+               self?.coordinator?.showLogin()
+            }
+         }
+         .store(in: &cancellabes)
    }
 }
