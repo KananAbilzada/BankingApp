@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       coordinator = AppCoordinator(window: window, navigationController: navigationController)
       coordinator?.start()
       
-      accountManager = AccountManagerImpl()
+      accountManager = AccountManagerImpl.shared
       if accountManager?.hasLogin() == true {
          coordinator?.showHome()
       } else {

@@ -41,6 +41,9 @@
 		E53C62AF2B31028700048956 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62AE2B31028700048956 /* ActionButton.swift */; };
 		E53C62B32B3171F600048956 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62B22B3171F600048956 /* UserDefaults+.swift */; };
 		E53C62B52B31722700048956 /* JsonSerializationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62B42B31722700048956 /* JsonSerializationHelper.swift */; };
+		E53C62FE2B31FD6800048956 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C62FD2B31FD6800048956 /* CardViewCell.swift */; };
+		E53C63012B32C79F00048956 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C63002B32C79F00048956 /* CardModel.swift */; };
+		E53C63032B32C90A00048956 /* CardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C63022B32C90A00048956 /* CardGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		E53C62AE2B31028700048956 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		E53C62B22B3171F600048956 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		E53C62B42B31722700048956 /* JsonSerializationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSerializationHelper.swift; sourceTree = "<group>"; };
+		E53C62FD2B31FD6800048956 /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
+		E53C63002B32C79F00048956 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		E53C63022B32C90A00048956 /* CardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +303,7 @@
 			children = (
 				E53C62892B306F6B00048956 /* Validator.swift */,
 				E53C62B42B31722700048956 /* JsonSerializationHelper.swift */,
+				E53C63022B32C90A00048956 /* CardGenerator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -347,6 +354,7 @@
 		E53C629E2B30DD4A00048956 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E53C62FF2B32C79100048956 /* Model */,
 				E53C62A52B30DE6500048956 /* ViewModel */,
 				E53C62A22B30DD7C00048956 /* Coordinator */,
 				E53C629F2B30DD4F00048956 /* View */,
@@ -358,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				E53C62A02B30DD5800048956 /* HomeViewController.swift */,
+				E53C62FD2B31FD6800048956 /* CardViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -392,6 +401,14 @@
 				E53C62AA2B30E0DA00048956 /* AccountManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E53C62FF2B32C79100048956 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E53C63002B32C79F00048956 /* CardModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,16 +543,19 @@
 			files = (
 				E53C62872B3061FE00048956 /* CustomButton.swift in Sources */,
 				E53C62742B2F5D2500048956 /* AppCoordinator.swift in Sources */,
+				E53C63032B32C90A00048956 /* CardGenerator.swift in Sources */,
 				E53C626F2B2F5B9A00048956 /* LoginViewModelImpl.swift in Sources */,
 				E53C626D2B2F5B9300048956 /* LoginViewModel.swift in Sources */,
 				E53C628A2B306F6B00048956 /* Validator.swift in Sources */,
 				E53C623C2B2F5B2200048956 /* LoginViewController.swift in Sources */,
+				E53C63012B32C79F00048956 /* CardModel.swift in Sources */,
 				E53C62802B302BF300048956 /* ImageNames.swift in Sources */,
 				E53C62A12B30DD5800048956 /* HomeViewController.swift in Sources */,
 				E53C628F2B307A4D00048956 /* UIViewController+alert.swift in Sources */,
 				E53C62992B30BE6600048956 /* RegisterViewModel.swift in Sources */,
 				E53C629B2B30BE7100048956 /* RegisterViewModelImpl.swift in Sources */,
 				E53C62852B3040B600048956 /* UIColor+.swift in Sources */,
+				E53C62FE2B31FD6800048956 /* CardViewCell.swift in Sources */,
 				E53C62382B2F5B2200048956 /* AppDelegate.swift in Sources */,
 				E53C623A2B2F5B2200048956 /* SceneDelegate.swift in Sources */,
 				E53C62AF2B31028700048956 /* ActionButton.swift in Sources */,

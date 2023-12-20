@@ -26,10 +26,14 @@ class RegisterViewModelImpl: RegisterViewModel, ObservableObject {
    
    init(
       validator: Validator = ValidatorImpl(),
-      accountManager: AccountManager = AccountManagerImpl()
+      accountManager: AccountManager = AccountManagerImpl.shared
    ) {
       self.validator = validator
       self.accountManager = accountManager
+   }
+   
+   deinit {
+      print("Deinited: RegisterViewModelImpl")
    }
 }
 

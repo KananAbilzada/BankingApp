@@ -27,11 +27,15 @@ class LoginViewModelImpl: LoginViewModel, ObservableObject {
    init(
       validator: Validator = ValidatorImpl(),
       jsonHelper: JSONHelperProtocol = JSONHelper(),
-      accountManager: AccountManager = AccountManagerImpl()
+      accountManager: AccountManager = AccountManagerImpl.shared
    ) {
       self.validator = validator
       self.jsonHelper = jsonHelper
       self.accountManager = accountManager
+   }
+   
+   deinit {
+      print("Deinited: LoginViewModelImpl")
    }
 }
 

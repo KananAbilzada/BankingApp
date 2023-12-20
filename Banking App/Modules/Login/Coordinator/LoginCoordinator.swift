@@ -38,10 +38,7 @@ class LoginCoordinator: Coordinator {
       UIApplication.setRootViewController(navigationController)
    }
    
-   
-   //    func showSecondController(with title: String) {
-   //        let secondCoordinator = SecondCoordinator(navigationController: navigationController, title: title)
-   //        secondCoordinator.start()
-   //    }
-   
+   deinit {
+      print("Deinited: LoginCoordinator")
+   }
 }

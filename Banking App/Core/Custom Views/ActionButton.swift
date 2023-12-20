@@ -45,10 +45,10 @@ class ActionButton: UIButton {
       view.translatesAutoresizingMaskIntoConstraints = false
       view.backgroundColor = .white
       view.layer.cornerRadius = 12
-      view.layer.shadowColor = UIColor.black.cgColor
-      view.layer.shadowOpacity = 0.2
-      view.layer.shadowOffset = .init(width: 0, height: 1)
-      view.layer.shadowRadius = 1
+//      view.layer.shadowColor = UIColor.black.cgColor
+//      view.layer.shadowOpacity = 0.2
+//      view.layer.shadowOffset = .init(width: 0, height: 1)
+//      view.layer.shadowRadius = 1
    
       return view
       
@@ -61,27 +61,21 @@ class ActionButton: UIButton {
       // Customize button appearance here, such as setting default colors, fonts, etc.
       translatesAutoresizingMaskIntoConstraints = false
       
-      self.addSubview(backgroundView)
+//      self.addSubview(backgroundView)
       self.addSubview(title)
-      backgroundView.addSubview(iconView)
-      
-      setupBackground()
+      self.addSubview(iconView)
       
       setConstraints()
    }
    
-   private func setupBackground() {
-      
-   }
-   
    func setConstraints() {
       NSLayoutConstraint.activate([
-         backgroundView.topAnchor.constraint(equalTo: topAnchor),
-         backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
-         backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
-         backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
-         backgroundView.widthAnchor.constraint(equalToConstant: 70),
-         backgroundView.heightAnchor.constraint(equalToConstant: 70),
+//         backgroundView.topAnchor.constraint(equalTo: topAnchor),
+//         backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//         backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//         backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+//         backgroundView.widthAnchor.constraint(equalToConstant: 70),
+//         backgroundView.heightAnchor.constraint(equalToConstant: 70),
         
          iconView.widthAnchor.constraint(equalToConstant: 20),
          iconView.heightAnchor.constraint(equalToConstant: 20),
@@ -91,6 +85,5 @@ class ActionButton: UIButton {
          title.topAnchor.constraint(equalTo: iconView.bottomAnchor, constant: 10),
          title.centerXAnchor.constraint(equalTo: centerXAnchor),
       ])
-      
    }
 }

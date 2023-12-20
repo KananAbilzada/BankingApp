@@ -64,6 +64,10 @@ class LoginViewController: UIViewController {
       setupUI()
       subscribeToViewModel()
    }
+   
+   deinit {
+      print("Deinited: LoginViewController")
+   }
 }
 
 // MARK: - Setup
@@ -82,7 +86,8 @@ extension LoginViewController {
       self.view.addSubview(loginButton)
       self.view.addSubview(notHaveAccountButton)
       
-      self.loginButton.addAction(UIAction(handler: { action in
+      self.loginButton.addAction(UIAction(handler: { [weak self] action in
+         guard let self else { return }
          /// validate fields and continue
          self.viewModel.checkFields(
             email: self.emailField.textField.text!,
@@ -90,7 +95,8 @@ extension LoginViewController {
          )
       }), for: .touchUpInside)
       
-      self.notHaveAccountButton.addAction(UIAction(handler: { action in
+      self.notHaveAccountButton.addAction(UIAction(handler: { [weak self] action in
+         guard let self else { return }
          self.coordinator?.showRegisterPage()
       }), for: .touchUpInside)
    }

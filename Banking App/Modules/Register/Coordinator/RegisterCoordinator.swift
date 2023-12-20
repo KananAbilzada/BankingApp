@@ -25,4 +25,7 @@ class RegisterCoordinator: Coordinator {
       mainCoordinator.start()
    }
    
+   deinit {
+      print("Deinited: RegisterCoordinator")
+   }
 }

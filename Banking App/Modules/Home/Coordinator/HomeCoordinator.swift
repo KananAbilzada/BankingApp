@@ -28,5 +28,8 @@ class HomeCoordinator: Coordinator {
       let loginViewController = LoginCoordinator(navigationController: navigationController)
       loginViewController.changeRootToLogin()
    }
-   
+ 
+   deinit {
+      print("Deinited: HomeCoordinator")
+   }
 }

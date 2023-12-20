@@ -72,6 +72,10 @@ class RegisterViewController: UIViewController {
       setupUI()
       subscribeToViewModel()
    }
+   
+   deinit {
+      print("Deinited: RegisterViewController")
+   }
 }
 
 // MARK: - Setup
@@ -91,12 +95,12 @@ extension RegisterViewController {
    private func setupScrollView() {
       view.addSubview(scrollView)
       scrollView.addSubview(scrollViewContainer)
-
+      
       scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
       scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
       scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
       scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-
+      
       scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
       scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
       scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
@@ -108,10 +112,11 @@ extension RegisterViewController {
    private func setupButton() {
       scrollViewContainer.addArrangedSubview(registerButton)
       
-      self.registerButton.addAction(UIAction(handler: { action in
+      self.registerButton.addAction(UIAction(handler: { [weak self] action in
+         guard let self else { return }
          /// validate fields and continue
          self.viewModel.checkFields(
-            username: self.usernameField.textField.text!, 
+            username: self.usernameField.textField.text!,
             email: self.emailField.textField.text!,
             password: self.passwordField.textField.text!,
             birthday: self.birthdayField.textField.text!
